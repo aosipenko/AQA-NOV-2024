@@ -10,6 +10,7 @@ public class PolyDemo {
         drive(mazda);
     }
 
+
     public static void drive(ICar iCar) {
         iCar.accelerate();
         iCar.accelerate();
@@ -19,3 +20,5 @@ public class PolyDemo {
         iCar.decelerate();
     }
 }
+
+

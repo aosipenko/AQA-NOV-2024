@@ -1,6 +1,6 @@
 package org.prog.cars;
 
-public class Car {
+public class  Car {
 
     public String color;
 
