@@ -10,5 +10,11 @@ package org.prog.equalshashcode.homework;
  * Add method with overload to any class with at least 3 samples
  * method(a), method(a,b) method(a,b,c)
  */
+
+//AppartmentComplexClass > SectionsClass > AppartmentsClass > RoomsClass
+
+
 public class OverrideOverloadHomework {
+
 }
+
