@@ -6,7 +6,7 @@ public class ObjectPlane {
         Plane plane1 = new Plane();
         Plane plane2 = new Plane();
 
-        plane1.flightId = "DF223";
+        plane1.flightId = "GFG55";
         plane1.destination = "Odessa";
         plane1.airlines = "2";
 
@@ -16,10 +16,10 @@ public class ObjectPlane {
 
 
         try {
-            System.out.println(plane1.equals(plane2));
+            System.out.println(plane2.equals(plane1));
             System.out.println(plane1.hashCode());
             System.out.println(plane2.hashCode());
-        } catch (NullPointerException e) {
+        } catch (NullPointerException nullPointerException) {
             System.out.println("flight id is missing!");
         } finally {
             System.out.println("works anyway");
