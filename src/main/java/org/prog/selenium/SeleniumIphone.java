@@ -16,6 +16,7 @@ public class SeleniumIphone {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
 
+
         try {
             driver.get("https://allo.ua/");
             WebElement searchInput = driver.findElement(By.id("search-form__input"));
