@@ -41,11 +41,8 @@ public class CollectionsDemo {
 
     public static Set<Car> findCars(Map<Car, List<String>> carsAndOwners, String requestedOwnerName) {
         Set<Car> carsOwnedBySpecificPerson = new HashSet<>();
-        Iterator<Map.Entry<Car, List<String>>> iterator =
-                carsAndOwners.entrySet().iterator();
 
-        while (iterator.hasNext()) {
-            Map.Entry<Car, List<String>> entry = iterator.next();
+        for (Map.Entry<Car, List<String>> entry : carsAndOwners.entrySet()) {
             Car carrUnderInspection = entry.getKey();
             List<String> owners = entry.getValue();
             if (owners.contains(requestedOwnerName)) {
