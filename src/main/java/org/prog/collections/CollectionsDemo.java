@@ -16,10 +16,13 @@ public class CollectionsDemo {
 
     public static void main(String[] args) {
         Map<Car, List<String>> carsAndOwners = new HashMap<>();
-        addCarToCompany(carsAndOwners, "black");
-        addCarToCompany(carsAndOwners, "white");
-        addCarToCompany(carsAndOwners, "red");
-        addCarToCompany(carsAndOwners, "blue");
+
+        List<String> randomOwners = Arrays.asList("Alla", "Alex", "Lora", "Lyudmila", "Dmytro", "Matvei", "Svetlana", "Sergey");
+
+        addCarToCompany(carsAndOwners, "black", getRandomOwners (randomOwners));
+        addCarToCompany(carsAndOwners, "white", getRandomOwners (randomOwners));
+        addCarToCompany(carsAndOwners, "red", getRandomOwners (randomOwners));
+        addCarToCompany(carsAndOwners, "blue", getRandomOwners (randomOwners));
 
         String requestedOwnerName = "John";
         Set<Car> carsOwnedBySpecificPerson = findCars(carsAndOwners, requestedOwnerName);
@@ -30,12 +33,10 @@ public class CollectionsDemo {
     }
 
     public static void addCarToCompany(Map<Car, List<String>> carsAndOwners,
-                                       String color) {
+                                       String color, List<String> owners) {
         Car car = new Car();
         car.color = color;
-        carsAndOwners.put(car, new ArrayList<>());
-        carsAndOwners.get(car).add("John");
-        carsAndOwners.get(car).add("Jane");
+        carsAndOwners.put(car, new ArrayList<>(owners));
     }
 
     public static Set<Car> findCars(Map<Car, List<String>> carsAndOwners, String requestedOwnerName) {
@@ -53,5 +54,16 @@ public class CollectionsDemo {
         }
 
         return carsOwnedBySpecificPerson;
+    }
+    public static List<String> getRandomOwners(List<String> availableOwners) {
+        Random random = new Random();
+        Set<String> selectedOwners = new HashSet<>();
+
+        while (selectedOwners.size() < 2) {
+            int index = random.nextInt(availableOwners.size());
+            selectedOwners.add(availableOwners.get(index));
+        }
+
+        return new ArrayList<>(selectedOwners);
     }
 }
