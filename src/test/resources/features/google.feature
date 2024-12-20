@@ -1,5 +1,6 @@
 Feature: Test google search
 
+  @severity=blocker
   Scenario: search for celebrity
     Given I request 3 random people from random user service
     Given I store those people to database
